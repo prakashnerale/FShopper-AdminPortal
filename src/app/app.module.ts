@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginService } from './services/login.service';
 import {AddItemService} from './services/add-item.service';
-
+import { ToastrServiceService } from './Services/toastr-service.service';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +18,8 @@ import { LoginComponent } from './components/login/login.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
+import { ViewListComponent } from './components/view-list/view-list.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
     LoginComponent,
     HomePageComponent,
     AddItemComponent,
+    ViewListComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { AddItemComponent } from './components/add-item/add-item.component';
   
   providers: [
     LoginService,
-    AddItemService
+    AddItemService,
+    ToastrServiceService
   ],
 
   bootstrap: [AppComponent]
