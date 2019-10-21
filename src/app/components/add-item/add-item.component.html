@@ -1,5 +1,5 @@
 <div class="container">
-    <div [hidden]="bookAdded">
+    <div [hidden]="itemAdded">
         <h3 style="margin-top: 30px;">Add New Item Here</h3>
          <form (ngSubmit)="onSubmit()">
             <mat-grid-list cols="4" rowHeight="70px">
@@ -95,7 +95,6 @@
                                 <a color="warn" mat-raised-button routerLink="/">Cancel</a>
                              </mat-grid-tile>
                     </mat-grid-list>
-
         </form>
     </div>
 </div>

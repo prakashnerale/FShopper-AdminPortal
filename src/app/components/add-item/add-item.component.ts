@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/models/item';
 import { AddItemService } from 'src/app/services/add-item.service';
 import { Router } from '@angular/router';
+import { ToastrServiceService } from 'src/app/Services/toastr-service.service';
 
 @Component({
   selector: 'app-add-item',
@@ -14,7 +15,7 @@ export class AddItemComponent implements OnInit {
  private itemAdded: boolean;
 
 
-  constructor(private addItemService:AddItemService,private router:Router) { }
+  constructor(private addItemService:AddItemService,private router:Router,private toastrService:ToastrServiceService) { }
 
   onSubmit(){
     this.addItemService.sendItem(this.newItem).subscribe(
@@ -23,13 +24,16 @@ export class AddItemComponent implements OnInit {
             this.newItem=new Item();
             this.newItem.category="Living";
             this.newItem.made="wood";
+            
           } ,
           err=>{
                 console.log(err);
        
               }
+            
        );
-       this.router.navigate(['/home-page']); 
+         this.router.navigate(['/home-page']); 
+         this.toastrService.Success("Added Successfully");
   }
                 
   ngOnInit() {
