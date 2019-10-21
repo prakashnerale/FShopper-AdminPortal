@@ -10,7 +10,7 @@ export class AddItemService {
 
   constructor(private http:Http) { }
 
-  sendItem(book:Item) {
+  sendItem(item:Item) {
   	let url = "http://localhost:8080/item/add";
     
     let headers = new Headers ({
@@ -18,7 +18,7 @@ export class AddItemService {
       'x-auth-token' : localStorage.getItem('xAuthToken')
     });
 
-    return this.http.post(url, JSON.stringify(book), {headers: headers});
+    return this.http.post(url, JSON.stringify(item), {headers: headers});
   }
 
 }
