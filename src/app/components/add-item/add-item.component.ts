@@ -25,16 +25,15 @@ export class AddItemComponent implements OnInit {
             this.newItem.category="Living";
             this.newItem.made="wood";
             
-          } ,
+          },
           err=>{
                 console.log(err);
        
               }
-            
-       );
-         this.router.navigate(['/home-page']); 
-         this.toastrService.Success("Added Successfully");
-  }
+      );
+         //this.router.navigate(['/home-page']);
+         //this.toastrService.Success("Added Successfully");
+    }
                 
   ngOnInit() {
     this.itemAdded=false;

@@ -1,7 +1,7 @@
 <div class="container">
     <div [hidden]="itemAdded">
         <h3 style="margin-top: 30px;">Add New Item Here</h3>
-         <form (ngSubmit)="onSubmit()">
+         <form (ngSubmit)="onSubmit()" ngNativeValidate>
             <mat-grid-list cols="4" rowHeight="70px">
               <mat-grid-tile [colspan]="1" [rowspan]="1">
                     <mat-form-field class="example-full-width">
@@ -97,4 +97,7 @@
                     </mat-grid-list>
         </form>
     </div>
+     <div class="row" [hidden]="!itemAdded">
+        <h3>Added Successfully</h3>
+     </div>
 </div>
