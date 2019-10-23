@@ -3,6 +3,7 @@ import { Item } from 'src/app/models/item';
 import { AddItemService } from 'src/app/services/add-item.service';
 import { Router } from '@angular/router';
 import { ToastrServiceService } from 'src/app/Services/toastr-service.service';
+import { UploadImageService } from 'src/app/services/upload-image.service';
 
 @Component({
   selector: 'app-add-item',
@@ -15,11 +16,15 @@ export class AddItemComponent implements OnInit {
  private itemAdded: boolean;
 
 
-  constructor(private addItemService:AddItemService,private router:Router,private toastrService:ToastrServiceService) { }
+  constructor(private addItemService:AddItemService,
+              private router:Router,
+              private toastrService:ToastrServiceService,
+              private uploadImageService:UploadImageService) { }
 
   onSubmit(){
     this.addItemService.sendItem(this.newItem).subscribe(
           res=>{
+            this.uploadImageService.upload(JSON.parse(JSON.parse(JSON.stringify(res))._body).id);
             this.itemAdded=true;
             this.newItem=new Item();
             this.newItem.category="Living";

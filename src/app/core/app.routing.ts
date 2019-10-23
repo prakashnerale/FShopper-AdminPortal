@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {LoginComponent} from '../components/login/login.component';
 import { HomePageComponent } from '../components/home-page/home-page.component';
 import { AddItemComponent } from '../components/add-item/add-item.component';
+import { ViewListComponent } from '../components/view-list/view-list.component';
 const appRoutes: Routes = [
 	{
 		path : '',
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
 	{
 		path:'add-item',
 		component:AddItemComponent 
+	},
+	{
+		path:'view-list',
+		component:ViewListComponent
 	}
 	
 
