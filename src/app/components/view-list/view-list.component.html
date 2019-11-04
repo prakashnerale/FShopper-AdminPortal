@@ -1,1 +1,40 @@
-<h3>view-list works!</h3>
+<div class="container">
+	<div class="table-responsive" style="margin-top: 30px;">
+		<table id="itemListTable" class="table bordered highlight">
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox" (change)="updateSelected($event.target.checked)" />
+					</th>
+					<th>Title</th>
+					<th>seller</th>
+					<th>Category</th>
+					<th>List Price</th>
+					<th>sellingPrice</th>
+					<th>Active?</th>
+					<th>Operation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor = "let item of itemList">
+					<td>
+						<input hidden="hidden" name="id" />
+						<input type="checkbox" [checked]="allChecked" (change)="updateRemoveitemList($event.target.checked, item)" />
+					</td>
+					<td><a (click)="onSelect(item)" style="cursor:pointer">{{item.title}}</a></td>
+					<td>{{item.seller}}</td>
+					<td>{{item.category}}</td>
+					<td>{{item.listPrice}}</td>
+					<td>{{item.sellingPrice}}</td>
+					<td>{{item.active}}</td>
+					<td>
+						<input hidden="hidden" name="id" />
+						<button mat-button (click)="openDialog(item)" value="delete"><span class="fa fa-times"></span> delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<button mat-raised-button class="mat-warn" id="deleteSelected" (click)="removeSelecteditems()">Delete Selected</button>
+</div>
+

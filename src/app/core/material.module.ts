@@ -6,6 +6,7 @@ import {
 } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   imports: [
   CommonModule, 
@@ -20,7 +21,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
   MatProgressSpinnerModule,
   MatGridListModule,
   MatSelectModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatListModule
   ],
   exports: [
   CommonModule,
@@ -35,7 +37,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
    MatProgressSpinnerModule,
    MatGridListModule,
    MatSelectModule,
-   MatSlideToggleModule
+   MatSlideToggleModule,
+   MatListModule
    ],
 })
 export class CustomMaterialModule { }

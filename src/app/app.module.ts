@@ -23,6 +23,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { ViewListComponent } from './components/view-list/view-list.component';
+import { ViewItemComponent } from './components/view-item/view-item.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { ViewListComponent } from './components/view-list/view-list.component';
     HomePageComponent,
     AddItemComponent,
     ViewListComponent,
+    ViewItemComponent,
+    EditItemComponent,
   ],
   imports: [
     BrowserModule,
