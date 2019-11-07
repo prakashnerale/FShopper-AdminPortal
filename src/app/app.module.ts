@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { routing } from './core/app.routing';
 import 'hammerjs';
 import { CustomMaterialModule } from './core/material.module';//material module is imported from core folder
@@ -14,6 +15,7 @@ import { LoginService } from './services/login.service';
 import {AddItemService} from './services/add-item.service';
 import { ToastrServiceService } from './Services/toastr-service.service';
 import { UploadImageService } from './Services/upload-image.service';
+import { GetItemlistService } from './Services/get-itemlist.service';
 
 
 import { AppComponent } from './app.component';
@@ -25,6 +27,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
 import { ViewListComponent } from './components/view-list/view-list.component';
 import { ViewItemComponent } from './components/view-item/view-item.component';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
+
 
 
 @NgModule({
@@ -47,13 +50,15 @@ import { EditItemComponent } from './components/edit-item/edit-item.component';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   
   providers: [
     LoginService,
     AddItemService,
     ToastrServiceService,
-    UploadImageService
+    UploadImageService,
+    GetItemlistService
   ],
 
   bootstrap: [AppComponent]
