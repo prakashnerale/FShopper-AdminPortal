@@ -29,12 +29,13 @@
 					<td>{{item.active}}</td>
 					<td>
 						<input hidden="hidden" name="id" />
-						<button mat-button (click)="openDialog(item)" value="delete"><span class="fa fa-times"></span> delete</button>
+						<button mat-button color="warn" (click)="openDialog(item)" value="delete"><span class="fa fa-times"></span>Delete</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<button mat-raised-button class="mat-warn" id="deleteSelected" (click)="removeSelecteditems()">Delete Selected</button>
+	
 </div>
 
